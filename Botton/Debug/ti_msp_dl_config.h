@@ -86,6 +86,26 @@ extern "C" {
 
 
 
+/* Defines for UART_0 */
+#define UART_0_INST                                                        UART0
+#define UART_0_INST_FREQUENCY                                            4000000
+#define UART_0_INST_IRQHandler                                  UART0_IRQHandler
+#define UART_0_INST_INT_IRQN                                      UART0_INT_IRQn
+#define GPIO_UART_0_RX_PORT                                                GPIOA
+#define GPIO_UART_0_TX_PORT                                                GPIOA
+#define GPIO_UART_0_RX_PIN                                         DL_GPIO_PIN_1
+#define GPIO_UART_0_TX_PIN                                         DL_GPIO_PIN_0
+#define GPIO_UART_0_IOMUX_RX                                      (IOMUX_PINCM2)
+#define GPIO_UART_0_IOMUX_TX                                      (IOMUX_PINCM1)
+#define GPIO_UART_0_IOMUX_RX_FUNC                       IOMUX_PINCM2_PF_UART0_RX
+#define GPIO_UART_0_IOMUX_TX_FUNC                       IOMUX_PINCM1_PF_UART0_TX
+#define UART_0_BAUD_RATE                                                (115200)
+#define UART_0_IBRD_4_MHZ_115200_BAUD                                        (2)
+#define UART_0_FBRD_4_MHZ_115200_BAUD                                       (11)
+
+
+
+
 
 /* Port definition for Pin Group LED1 */
 #define LED1_PORT                                                        (GPIOB)
@@ -97,6 +117,10 @@ extern "C" {
 #define KEY_PORT                                                         (GPIOB)
 
 /* Defines for PIN_21: GPIOB.21 with pinCMx 49 on package pin 20 */
+// pins affected by this interrupt request:["PIN_21"]
+#define KEY_INT_IRQN                                            (GPIOB_INT_IRQn)
+#define KEY_INT_IIDX                            (DL_INTERRUPT_GROUP1_IIDX_GPIOB)
+#define KEY_PIN_21_IIDX                                     (DL_GPIO_IIDX_DIO21)
 #define KEY_PIN_21_PIN                                          (DL_GPIO_PIN_21)
 #define KEY_PIN_21_IOMUX                                         (IOMUX_PINCM49)
 
@@ -107,6 +131,7 @@ void SYSCFG_DL_initPower(void);
 void SYSCFG_DL_GPIO_init(void);
 void SYSCFG_DL_SYSCTL_init(void);
 void SYSCFG_DL_TIMER_0_init(void);
+void SYSCFG_DL_UART_0_init(void);
 
 
 bool SYSCFG_DL_saveConfiguration(void);

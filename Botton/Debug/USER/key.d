@@ -1,6 +1,6 @@
 # FIXED
 
-key/key.o: ../key/key.c E:/M0/Botton/key/key.h \
+USER/key.o: ../USER/key.c E:/M0/Botton/USER/key.h \
  C:/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/dl_gpio.h \
  C:/ti/mspm0_sdk_2_04_00_06/source/ti/devices/msp/msp.h \
  C:/ti/mspm0_sdk_2_04_00_06/source/ti/devices/DeviceFamily.h \
@@ -75,9 +75,9 @@ key/key.o: ../key/key.c E:/M0/Botton/key/key.h \
  C:/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/dl_wwdt.h \
  C:/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_interrupt.h \
  C:/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_systick.h \
- E:/M0/Botton/targetConfigs/empty.h
+ E:/M0/Botton/USER/empty.h
 
-E:/M0/Botton/key/key.h:
+E:/M0/Botton/USER/key.h:
 
 C:/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/dl_gpio.h:
 
@@ -227,4 +227,4 @@ C:/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_interrupt.h:
 
 C:/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_systick.h:
 
-E:/M0/Botton/targetConfigs/empty.h:
+E:/M0/Botton/USER/empty.h:

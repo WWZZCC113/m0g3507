@@ -1,5 +1,10 @@
 #include "empty.h"
 #include "key.h"
+#include "ti/devices/msp/m0p/mspm0g350x.h"
+#include "ti_msp_dl_config.h"
+#include "UART.h"
+#include <stdio.h>
+#include <string.h>
 
 uint32_t uwTick = 0;
 
@@ -9,20 +14,23 @@ int main(void)
     
     // 清除定时器中断标志
     NVIC_ClearPendingIRQ(TIMER_0_INST_INT_IRQN);
+    NVIC_ClearPendingIRQ(UART0_INT_IRQn);
     // 使能定时器中断
     NVIC_EnableIRQ(TIMER_0_INST_INT_IRQN);
+    NVIC_EnableIRQ(UART_0_INST_INT_IRQN);
+    //
+    printf("Hello \n");
+
 
     while (1)
     {   
-        // 调用按键处理函数，内部已经包含了状态读取和防抖处理
         Botton_Process();
-        
-        // 如果需要，可以添加其他任务
-        // 由于Botton_Process已经有100ms的调用限制，这里不会占用太多CPU
+    
     }
 }
 
-// 定时器的中断服务函数 已配置为1ms的周期（建议修改为1ms以提高精度）
+
+// 定时器的中断服务函数 已配置为1ms的周期
 void TIMER_0_INST_IRQHandler(void)
 {
     // 如果产生了定时器中断
@@ -41,4 +49,28 @@ void TIMER_0_INST_IRQHandler(void)
         default:  // 其他的定时器中断
             break;
     }
+}
+
+int fputc(int c, FILE* stream)
+{
+	DL_UART_Main_transmitDataBlocking(UART0, c);
+    return c;
+}
+ 
+int fputs(const char* restrict s, FILE* restrict stream)
+{
+    uint16_t i, len;
+    len = strlen(s);
+    for(i=0; i<len; i++)
+    {
+        DL_UART_Main_transmitDataBlocking(UART0, s[i]);
+    }
+    return len;
+}
+ 
+int puts(const char *_ptr)
+{
+        int count = fputs(_ptr,stdout);
+        count +=fputs("\n",stdout);
+        return count;
 }

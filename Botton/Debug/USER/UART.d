@@ -1,6 +1,6 @@
 # FIXED
 
-empty.o: ../empty.c E:/M0/Botton/USER/empty.h \
+USER/UART.o: ../USER/UART.c E:/M0/Botton/USER/UART.h \
  ti_msp_dl_config.h \
  C:/ti/mspm0_sdk_2_04_00_06/source/ti/devices/msp/msp.h \
  C:/ti/mspm0_sdk_2_04_00_06/source/ti/devices/DeviceFamily.h \
@@ -74,10 +74,9 @@ empty.o: ../empty.c E:/M0/Botton/USER/empty.h \
  C:/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/dl_vref.h \
  C:/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/dl_wwdt.h \
  C:/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_interrupt.h \
- C:/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_systick.h \
- E:/M0/Botton/USER/key.h E:/M0/Botton/USER/UART.h
+ C:/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_systick.h
 
-E:/M0/Botton/USER/empty.h:
+E:/M0/Botton/USER/UART.h:
 
 ti_msp_dl_config.h:
 
@@ -226,7 +225,3 @@ C:/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/dl_wwdt.h:
 C:/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_interrupt.h:
 
 C:/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_systick.h:
-
-E:/M0/Botton/USER/key.h:
-
-E:/M0/Botton/USER/UART.h:
