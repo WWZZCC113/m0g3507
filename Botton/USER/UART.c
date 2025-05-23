@@ -2,6 +2,11 @@
 
 volatile unsigned char uart_data = 0;
 
+//   // 清除定时器中断标志
+//     NVIC_ClearPendingIRQ(UART0_INT_IRQn);
+//     // 使能定时器中断
+//     NVIC_EnableIRQ(UART_0_INST_INT_IRQN);
+
 //串口发送单个字符
 void uart0_send_char(char ch)
 {
